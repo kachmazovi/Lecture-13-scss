@@ -1,0 +1,52 @@
+@import "reset";
+@import "variables";
+@import "placeholders";
+@import "mixins";
+
+body {
+  background-color: gray;
+  color: $primary-color;
+
+  .container {
+    @extend %container;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+    ul {
+      @include goFlex(row, space-evenly, stretch, wrap);
+      gap: 30px;
+
+      li {
+        font-size: 24px;
+      }
+    }
+  }
+
+  main {
+    @extend %container;
+    @include goFlex(row, space-between);
+    margin: 0 auto;
+
+    .left-section {
+      width: 20%;
+      color: $primary-color;
+    }
+
+    .right-section {
+      @include goFlex(row, space-between, stretch, wrap);
+      width: 75%;
+      gap: 20px;
+      color: $primary-color;
+
+      .widget {
+        width: 285px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
