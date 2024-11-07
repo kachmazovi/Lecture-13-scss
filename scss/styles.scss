@@ -4,7 +4,6 @@
 @import "mixins";
 
 body {
-  background-color: gray;
   color: $primary-color;
 
   .container {
@@ -21,6 +20,10 @@ body {
       li {
         font-size: 24px;
       }
+
+      @media (max-width: 480px) {
+        display: none;
+      }
     }
   }
 
@@ -32,6 +35,12 @@ body {
     .left-section {
       width: 20%;
       color: $primary-color;
+
+      @media (max-width: 1280px) {
+        width: 100%;
+        padding: 20px 40px;
+        text-align: center;
+      }
     }
 
     .right-section {
@@ -47,6 +56,15 @@ body {
           width: 100%;
         }
       }
+
+      @media (max-width: 1280px) {
+        width: 100%;
+        justify-content: space-evenly;
+      }
+    }
+
+    @media (max-width: 1280px) {
+      flex-direction: column;
     }
   }
 }
